@@ -1,0 +1,30 @@
+{
+  "name": "e2e-ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tests": "npx playwright test",
+    "tests ui": "npx playwright test --ui"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/witeknatalia/e2e-ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/witeknatalia/e2e-ecommerce/issues"
+  },
+  "homepage": "https://github.com/witeknatalia/e2e-ecommerce#readme",
+  "devDependencies": {
+    "@playwright/test": "1.57.0",
+    "@types/node": "25.0.2",
+    "dotenv": "17.2.3",
+    "eslint": "9.39.2",
+    "globals": "16.5.0",
+    "prettier": "3.7.4",
+    "typescript-eslint": "8.50.0"
+  }
+}
