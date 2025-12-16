@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tests": "npx playwright test",
-    "tests ui": "npx playwright test --ui"
+    "tests-ui": "npx playwright test --ui"
   },
   "repository": {
     "type": "git",
