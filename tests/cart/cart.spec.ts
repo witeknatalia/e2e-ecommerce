@@ -232,6 +232,7 @@ test.describe('Shopping Cart', () => {
     test('should navigate back to store when clicking continue shopping', async () => {
       await productDetailsPage.navigateToProduct('/computing-and-internet');
       await productDetailsPage.addToCart();
+      await productDetailsPage.verifyAddToCartSuccess();
       await cartPage.navigateToCart();
       await cartPage.clickContinueShopping();
 
@@ -242,6 +243,7 @@ test.describe('Shopping Cart', () => {
     test('should preserve cart items when continuing shopping', async () => {
       await productDetailsPage.navigateToProduct('/computing-and-internet');
       await productDetailsPage.addToCart();
+      await productDetailsPage.verifyAddToCartSuccess();
       await cartPage.navigateToCart();
 
       const productNamesBeforeContinue = await cartPage.getProductNames();
@@ -409,6 +411,7 @@ test.describe('Shopping Cart', () => {
 
       await productDetailsPage.navigateToProduct('/computing-and-internet');
       await productDetailsPage.addToCart();
+      await productDetailsPage.verifyAddToCartSuccess();
       await cartPage.navigateToCart();
     });
 
@@ -440,6 +443,7 @@ test.describe('Shopping Cart', () => {
     test('should display product image in cart', async () => {
       await productDetailsPage.navigateToProduct('/computing-and-internet');
       await productDetailsPage.addToCart();
+      await productDetailsPage.verifyAddToCartSuccess();
       await cartPage.navigateToCart();
 
       await expect(cartPage.productPicture.first()).toBeVisible();
@@ -448,6 +452,7 @@ test.describe('Shopping Cart', () => {
     test('should display product name as link in cart', async () => {
       await productDetailsPage.navigateToProduct('/computing-and-internet');
       await productDetailsPage.addToCart();
+      await productDetailsPage.verifyAddToCartSuccess();
       await cartPage.navigateToCart();
 
       const productName = cartPage.productName.first();
@@ -460,6 +465,7 @@ test.describe('Shopping Cart', () => {
     test('should display unit price in cart', async () => {
       await productDetailsPage.navigateToProduct('/computing-and-internet');
       await productDetailsPage.addToCart();
+      await productDetailsPage.verifyAddToCartSuccess();
       await cartPage.navigateToCart();
 
       await expect(cartPage.unitPrice.first()).toBeVisible();
@@ -470,6 +476,7 @@ test.describe('Shopping Cart', () => {
     test('should display subtotal for each product', async () => {
       await productDetailsPage.navigateToProduct('/computing-and-internet');
       await productDetailsPage.addToCart(2);
+      await productDetailsPage.verifyAddToCartSuccess();
       await cartPage.navigateToCart();
 
       await expect(cartPage.productSubtotal.first()).toBeVisible();
@@ -480,6 +487,7 @@ test.describe('Shopping Cart', () => {
     test('should show edit link for cart items', async () => {
       await productDetailsPage.navigateToProduct('/computing-and-internet');
       await productDetailsPage.addToCart();
+      await productDetailsPage.verifyAddToCartSuccess();
       await cartPage.navigateToCart();
 
       const editLink = cartPage.editItemLink.first();
