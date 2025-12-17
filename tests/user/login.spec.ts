@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import fs from 'fs';
-import { LoginPage } from '../../pageObjects/user/LoginPage';
+import { LoginPage } from '../../pageObjects/user/loginPage';
 import { RegistrationPage } from '../../pageObjects/user/registrationPage';
 
 const generateUniqueEmail = () => `testuser${Date.now()}${Math.floor(Math.random() * 1000)}@example.com`;
