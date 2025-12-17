@@ -37,6 +37,14 @@ export class SearchPage extends BasePage {
     await this.searchInput.fill(searchTerm);
     await this.searchButton.click();
     await this.page.waitForLoadState('domcontentloaded');
+    const hasResults = await this.productItems
+      .first()
+      .isVisible()
+      .catch(() => false);
+    const hasNoResults = await this.noResultsMessage.isVisible().catch(() => false);
+    if (hasResults) {
+      await this.productItems.first().waitFor({ state: 'visible' });
+    }
   }
 
   async verifyOnSearchResultsPage() {
